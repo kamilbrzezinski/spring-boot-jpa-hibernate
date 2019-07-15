@@ -1,9 +1,6 @@
 package pl.jaknauczycsieprogramowania;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,12 +10,19 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int age;
     private String username;
+    private int age;
     private String city;
+
+    public User(String username, int age, String city) {
+        this.username = username;
+        this.age = age;
+        this.city = city;
+    }
 }

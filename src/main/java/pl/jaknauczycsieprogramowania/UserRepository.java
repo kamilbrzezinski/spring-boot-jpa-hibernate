@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
     List<User> findByUsername(String username);
     List<User> findByUsernameContaining(String username);
     List<User> findByAgeGreaterThan(int age);
